@@ -469,8 +469,16 @@ Users (1) ──────── (Many) Itineraries
 │  5. Server verifies OTP → bcrypt.hash(newPw) → update DB     │
 │  6. Delete used OTP from store                               │
 └─────────────────────────────────────────────────────────────┘
-```
 
+```
+So when you call bcrypt.compare("mypassword123", storedHash):
+
+bcrypt reads the stored hash string
+Extracts the salt from it: K7L1OJ45MFTO1Cz4Rm4X3e
+Hashes "mypassword123" using THAT SAME salt
+Gets a result
+Compares that result with the hash portion of the stored string
+If they match → true (correct password). If not → false.
 ### 7.2 Security Measures Implemented
 
 | Measure | Implementation | Purpose |
