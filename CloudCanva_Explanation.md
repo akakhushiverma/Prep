@@ -1030,6 +1030,9 @@ raise HTTPException(status_code=500, detail="error message")  # Error
 ## Python — Key Libraries Used
 
 ### Boto3 (AWS SDK for Python)
+Boto3 is the official AWS SDK (Software Development Kit) for Python. It allows Python applications to interact programmatically with AWS services such as Amazon S3, EC2, DynamoDB, Bedrock, Cognito, IAM, STS, and many others.
+
+Instead of manually calling AWS REST APIs, developers use Boto3's Python methods to perform AWS operations.
 ```python
 import boto3
 
