@@ -2236,6 +2236,7 @@ A: bcrypt:
 3. Stores: `$2b$12$<salt><hash>`
 4. Each hash is unique even for identical passwords (due to random salt)
 5. Cost factor makes brute-force exponentially expensive
+A rainbow table is a precomputed database of common passwords and their hashes, allowing attackers to quickly reverse unsalted password hashes. bcrypt prevents rainbow table attacks by adding a unique random salt to every password before hashing, so even identical passwords produce different hashes. This makes precomputed rainbow tables useless.
 
 **Q: What's the security risk of storing JWT_SECRET in .env?**
 
